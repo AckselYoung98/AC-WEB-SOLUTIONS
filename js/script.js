@@ -75,6 +75,7 @@ document.querySelectorAll("[data-section]").forEach(section => {
 
 function setActive(section) {
   const id = section.getAttribute("id");
+  if (!id) return;
 
   document
     .querySelectorAll(".main-nav a")
@@ -99,25 +100,32 @@ document.querySelectorAll("[data-scroll]").forEach(link => {
 
     const overlay = document.querySelector(".scene-overlay");
 
-    gsap.timeline()
-      .to(overlay, {
+    const tl = gsap.timeline();
+
+    if (overlay) {
+      tl.to(overlay, {
         opacity: 1,
         duration: 0.35,
         ease: "power2.out"
-      })
-      .to(window, {
-        duration: 1.2,
-        scrollTo: {
-          y: target,
-          offsetY: 110
-        },
-        ease: "power3.inOut"
-      })
-      .to(overlay, {
+      });
+    }
+
+    tl.to(window, {
+      duration: 1.2,
+      scrollTo: {
+        y: target,
+        offsetY: 110
+      },
+      ease: "power3.inOut"
+    });
+
+    if (overlay) {
+      tl.to(overlay, {
         opacity: 0,
         duration: 0.4,
         ease: "power2.in"
       });
+    }
   });
 });
 
@@ -125,7 +133,10 @@ document.querySelectorAll("[data-scroll]").forEach(link => {
 // SEÇÕES – ENTRADA ALTERNADA
 // =====================================================
 gsap.utils.toArray("[data-section]").forEach((section, index) => {
-  gsap.from(section.querySelector(".container"), {
+  const container = section.querySelector(".container");
+  if (!container) return;
+
+  gsap.from(container, {
     scrollTrigger: {
       trigger: section,
       start: "top 80%"
@@ -141,7 +152,10 @@ gsap.utils.toArray("[data-section]").forEach((section, index) => {
 // CARDS – STAGGER PREMIUM
 // =====================================================
 gsap.utils.toArray(".cards").forEach(cards => {
-  gsap.from(cards.querySelectorAll("[data-card]"), {
+  const items = cards.querySelectorAll("[data-card]");
+  if (!items.length) return;
+
+  gsap.from(items, {
     scrollTrigger: {
       trigger: cards,
       start: "top 85%"
@@ -157,12 +171,15 @@ gsap.utils.toArray(".cards").forEach(cards => {
 // =====================================================
 // HERO GRID – PARALLAX LEVE
 // =====================================================
-gsap.to(".bg-grid", {
-  y: 80,
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top top",
-    end: "bottom top",
-    scrub: true
-  }
-});
+const grid = document.querySelector(".bg-grid");
+if (grid) {
+  gsap.to(grid, {
+    y: 80,
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+}
