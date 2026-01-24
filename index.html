@@ -1,105 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>AC Web Solutions | Tecnologia Corporativa</title>
+  <title>AC Web Solutions | Tecnologia Corporativa</title>
 
-<meta name="description" content="AC Web Solutions oferece soluções em tecnologia, suporte computacional, desenvolvimento C# .NET e consultoria empresarial em Ituiutaba e Região.">
-<meta name="keywords" content="TI Ituiutaba, Desenvolvimento .NET, Consultoria em Tecnologia, Suporte Empresarial">
-<link rel="icon" href="assets/fav.ico" type="image/x-icon">
+  <meta name="description" content="Soluções em tecnologia, suporte computacional, desenvolvimento .NET e consultoria empresarial em Ituiutaba e Região.">
+  <link rel="icon" href="assets/fav.ico" type="image/x-icon">
 
-<!-- Font Awesome -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-<link rel="stylesheet" href="css/main.css" />
-
-<meta name="geo.region" content="BR-MG">
-<meta name="geo.placename" content="Ituiutaba">
-<meta name="geo.position" content="-18.9772;-49.4639">
-<meta name="ICBM" content="-18.9772, -49.4639">
-
-<!-- SEO estruturado -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "AC Web Solutions",
-  "description": "Suporte computacional, desenvolvimento web em C# .NET, consultoria e treinamento corporativo em Ituiutaba e Região.",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Ituiutaba e Região"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ituiutaba",
-    "addressRegion": "MG",
-    "addressCountry": "BR"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "telephone": "+55-34-99967-7769"
-  },
-  "sameAs": [
-    "https://www.instagram.com/ackselwebsolutions"
-  ]
-}
-</script>
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-    <div class="scene-overlay"></div>
 
+<!-- Overlay de transição -->
+<div class="scene-overlay"></div>
 
-<!-- HEADER ENTERPRISE (controlado por GSAP depois) -->
-<header class="topbar" data-header>
-  <div class="container">
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-inner">
+
     <div class="brand">
       <img src="assets/logo.png" alt="AC Web Solutions" />
     </div>
 
-    <!-- Menu com data-scroll para transição animada -->
+    <!-- Menu Desktop -->
     <nav class="main-nav">
       <a href="#solucoes" data-scroll>Soluções</a>
       <a href="#consultoria" data-scroll>Consultoria</a>
       <a href="#regiao" data-scroll>Atuação</a>
       <a href="#contato" class="cta" data-scroll>Contato</a>
     </nav>
+
+    <!-- Botão Mobile -->
+    <button class="menu-toggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero section-active" data-section="hero">
+<!-- ================= MENU MOBILE ================= -->
+<nav class="mobile-nav">
+  <a href="#solucoes" data-scroll>Soluções</a>
+  <a href="#consultoria" data-scroll>Consultoria</a>
+  <a href="#regiao" data-scroll>Atuação</a>
+  <a href="#contato" data-scroll>Contato</a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" data-section="hero">
   <div class="bg-grid"></div>
 
   <div class="container hero-content">
     <h1 class="hero-title">
-      Tecnologia corporativa<br />
+      Tecnologia corporativa<br>
       <span>que sustenta decisões reais</span>
     </h1>
 
     <p class="hero-subtitle">
       Sistemas lentos, falhas constantes e falta de controle técnico custam tempo,
-dinheiro e credibilidade.
-
-A AC Web Solutions ajuda empresas de Ituiutaba e região a estruturar
-sua tecnologia de forma segura, eficiente e alinhada ao crescimento do negócio.
-
+      dinheiro e credibilidade.<br><br>
+      A AC Web Solutions ajuda empresas da região a estruturar a tecnologia
+      de forma segura, eficiente e preparada para crescer.
     </p>
 
     <div class="hero-actions">
-      <a
-        href="https://wa.me/5534999677769"
-        target="_blank"
-        class="btn-primary"
-      >
+      <a href="https://wa.me/5534999677769" target="_blank" class="btn-primary">
         <i class="fa-brands fa-whatsapp"></i>
         Falar no WhatsApp
       </a>
@@ -111,149 +84,100 @@ sua tecnologia de forma segura, eficiente e alinhada ao crescimento do negócio.
   </div>
 </section>
 
-<!-- SOLUÇÕES -->
+<!-- ================= SOLUÇÕES ================= -->
 <section id="solucoes" class="section" data-section="solucoes">
   <div class="container">
-    <h2 class="section-title">Soluções Empresariais</h2>
-    <p>Problemas técnicos raramente surgem do nada.
-Na maioria das vezes, eles são resultado de tecnologia mal planejada,
-processos improvisados ou falta de acompanhamento adequado.
-
-Nossas soluções atuam exatamente nesses pontos críticos.
-</p>
+    <header class="section-header">
+      <h2 class="section-title">Soluções Empresariais</h2>
+      <p class="section-intro">
+        Problemas técnicos raramente surgem do nada.
+        Eles são reflexo de decisões mal estruturadas e falta de acompanhamento.
+      </p>
+    </header>
 
     <div class="cards">
-      <div class="card" data-card>
+      <article class="card">
         <i class="fa-solid fa-server"></i>
         <h3>Suporte Computacional</h3>
-        <p>
-          Atendimento técnico para ambientes corporativos,
-          garantindo estabilidade, segurança e continuidade.
-        </p>
-      </div>
+        <p>Estabilidade, segurança e continuidade para ambientes corporativos.</p>
+      </article>
 
-      <div class="card" data-card>
+      <article class="card">
         <i class="fa-solid fa-code"></i>
         <h3>Desenvolvimento .NET</h3>
-        <p>
-          Sistemas e aplicações web em <strong>C# .NET</strong>,
-          focados em performance e escalabilidade.
-        </p>
-      </div>
+        <p>Sistemas em C# .NET focados em performance e escalabilidade.</p>
+      </article>
 
-      <div class="card" data-card>
+      <article class="card">
         <i class="fa-solid fa-shield-halved"></i>
         <h3>Manutenção Preventiva</h3>
-        <p>
-          Redução de falhas, planejamento técnico
-          e aumento da vida útil dos equipamentos.
-        </p>
-      </div>
+        <p>Redução de falhas e aumento da vida útil dos equipamentos.</p>
+      </article>
 
-      <div class="card" data-card>
+      <article class="card">
         <i class="fa-solid fa-chart-line"></i>
         <h3>Consultoria Estratégica</h3>
-        <p>
-          Tecnologia alinhada ao negócio,
-          ajudando gestores a tomar decisões seguras.
-        </p>
-      </div>
+        <p>Tecnologia alinhada ao negócio e à tomada de decisão.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- CONSULTORIA -->
+<!-- ================= CONSULTORIA ================= -->
 <section id="consultoria" class="section gradient" data-section="consultoria">
   <div class="container narrow">
-    <h2 class="section-title">
-      Treinamento Corporativo & Boas Práticas em TI
-    </h2>
+    <h2 class="section-title">Treinamento & Boas Práticas em TI</h2>
 
     <p>
-        Tecnologia só faz sentido quando apoia o negócio.
-Sem orientação, ela vira custo, dependência e insegurança.
-    </p>
-      <p>
-        Empresas que crescem precisam de equipes preparadas.
-      A AC Web Solutions oferece consultoria e treinamentos voltados
-      para o uso consciente e estratégico dos recursos tecnológicos.
-      </p>
-
-    <p>
-      Atuamos na capacitação de colaboradores para boas práticas no uso
-      de equipamentos de hardware, segurança da informação,
-      organização do ambiente computacional e prevenção de falhas.
+      Tecnologia só gera resultado quando as pessoas sabem utilizá-la.
+      Sem orientação, ela vira custo, dependência e insegurança.
     </p>
 
     <p>
-      O resultado é a redução de custos com manutenção corretiva,
-      maior vida útil dos equipamentos e equipes mais produtivas,
-      alinhadas às políticas e objetivos da empresa.
+      Capacitamos equipes para boas práticas, segurança da informação
+      e uso consciente dos recursos tecnológicos.
     </p>
   </div>
 </section>
 
-<!-- REGIÃO -->
+<!-- ================= REGIÃO ================= -->
 <section id="regiao" class="section" data-section="regiao">
   <div class="container narrow">
     <h2 class="section-title">Atuação em Ituiutaba e Região</h2>
 
     <p>
-      Atender empresas da região nos permite entender de perto os desafios reais
-de micro, pequenas, médias e grandes operações.
-
+      Atendemos empresas de diferentes portes e segmentos,
+      respeitando a realidade e o momento de cada negócio.
     </p>
 
     <p>
-      Entendemos os desafios enfrentados por pequenos, médios
-      e grandes empresários, e entregamos soluções em tecnologia
-      que realmente fazem sentido para o negócio.
-    </p>
-
-    <p>
-      Seja para suporte técnico, desenvolvimento de sistemas,
-      consultoria ou treinamentos, nosso foco é construir
-      parcerias duradouras baseadas em confiança e resultado.
-    </p>
-
-    <p>
-        Atendemos empresas de diferentes segmentos: indústria, comércio,
-serviços e área elétrica sempre respeitando o porte, o momento e a realidade de cada negócio.
+      Nosso foco é construir parcerias duradouras,
+      baseadas em confiança, clareza e resultado.
     </p>
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- ================= CONTATO ================= -->
 <section id="contato" class="section contact" data-section="contato">
   <div class="container narrow">
     <h2 class="section-title">Vamos conversar?</h2>
 
     <p>
-      Antes de qualquer proposta, acreditamos em entender o cenário do negócio.
-
-Se você sente que a tecnologia da sua empresa poderia funcionar melhor,
-ou simplesmente quer trocar uma ideia sobre possibilidades,
-estamos abertos para uma conversa sem compromisso.
-
+      Antes de qualquer proposta, acreditamos em entender o cenário.
+      Uma conversa clara costuma evitar muitos problemas no futuro.
     </p>
 
     <div class="contact-links">
       <a href="https://wa.me/5534999677769" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
       </a>
 
       <a href="mailto:ackselwebsolutions@gmail.com">
-        <i class="fa-solid fa-envelope"></i>
-        Email
+        <i class="fa-solid fa-envelope"></i> Email
       </a>
 
-      <a
-        href="https://www.instagram.com/ackselwebsolutions"
-        target="_blank"
-      >
-        <i class="fa-brands fa-instagram"></i>
-        Instagram
+      <a href="https://www.instagram.com/ackselwebsolutions" target="_blank">
+        <i class="fa-brands fa-instagram"></i> Instagram
       </a>
     </div>
   </div>
@@ -263,14 +187,12 @@ estamos abertos para uma conversa sem compromisso.
   © 2026 AC Web Solutions • Tecnologia corporativa
 </footer>
 
-<!-- GSAP CORE -->
+<!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
-<!-- JS PRINCIPAL -->
 <script src="js/main.js"></script>
 
 </body>
 </html>
-
