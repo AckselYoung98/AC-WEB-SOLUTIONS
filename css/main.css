@@ -117,6 +117,16 @@ body {
   position: relative;
 }
 
+.main-nav a {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+}
+
 .bg-grid {
   position: absolute;
   inset: 0;
