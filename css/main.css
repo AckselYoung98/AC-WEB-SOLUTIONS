@@ -117,17 +117,6 @@ body {
   position: relative;
 }
 
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-.hero h1 span {
-  display: inline-block;
-  margin-top: 6px;
-}
-
-
 .bg-grid {
   position: absolute;
   inset: 0;
@@ -311,21 +300,6 @@ footer {
   pointer-events: none;
   opacity: 0;
   z-index: 50;
-}
-
-@media (max-width: 768px) {
-  .topbar .container {
-    padding: 14px 0;
-  }
-
-  nav a {
-    margin-left: 16px;
-    font-size: 0.9rem;
-  }
-
-  .brand img {
-    height: 70px;
-  }
 }
 
 
