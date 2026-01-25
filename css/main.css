@@ -228,6 +228,9 @@ body {
   font-size: 2.1rem;
   margin-bottom: 24px;
 }
+.section-title span {
+  color: var(--primary);
+}
 
 .section p {
   margin-bottom: 22px;
