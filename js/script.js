@@ -4,25 +4,31 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const toggle = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector(".mobile-nav");
 
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("open");
-  mobileNav.classList.toggle("open");
-  document.body.classList.toggle("nav-open");
-});
-
-document.querySelectorAll(".mobile-nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    toggle.classList.remove("open");
-    mobileNav.classList.remove("open");
-    document.body.classList.remove("nav-open");
+if (toggle && mobileNav) {
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    mobileNav.classList.toggle("open");
+    document.body.classList.toggle("nav-open");
   });
-});
+
+  document.querySelectorAll(".mobile-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      toggle.classList.remove("open");
+      mobileNav.classList.remove("open");
+      document.body.classList.remove("nav-open");
+    });
+  });
+}
 
 /* ================= HERO ================= */
 gsap.timeline({ delay: 0.2 })
-  .from(".hero-title", { y: 50, opacity: 0, duration: 1 })
-  .from(".hero-subtitle", { y: 30, opacity: 0, duration: 0.8 }, "-=0.6")
-  .from(".hero-actions a", { y: 20, opacity: 0, stagger: 0.15 }, "-=0.4");
+  .from(".hero-title", { y: 40, opacity: 0, duration: 1, ease: "power3.out" })
+  .from(".hero-subtitle", { y: 25, opacity: 0, duration: 0.8 }, "-=0.6")
+  .from(".hero-actions a", {
+    y: 20,
+    opacity: 0,
+    stagger: 0.15
+  }, "-=0.4");
 
 /* ================= HEADER / LOGO ================= */
 gsap.to(".brand img", {
@@ -48,47 +54,70 @@ document.querySelectorAll("[data-section]").forEach(section => {
 
 function activate(section) {
   const id = section.getAttribute("id");
-  document.querySelectorAll(".main-nav a").forEach(a => a.classList.remove("active"));
+  document.querySelectorAll(".main-nav a")
+    .forEach(a => a.classList.remove("active"));
+
   const link = document.querySelector(`.main-nav a[href="#${id}"]`);
   if (link) link.classList.add("active");
 }
 
-/* ================= SCENE CHANGE ================= */
+/* ================= SCROLL SUAVE COM OVERLAY ================= */
 document.querySelectorAll("[data-scroll]").forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
+
     const target = document.querySelector(link.getAttribute("href"));
     if (!target) return;
 
     const overlay = document.querySelector(".scene-overlay");
 
-    gsap.timeline()
-      .to(overlay, { opacity: 1, duration: 0.35 })
-      .to(window, {
-        scrollTo: { y: target, offsetY: 110 },
-        duration: 1.1,
-        ease: "power3.inOut"
-      })
-      .to(overlay, { opacity: 0, duration: 0.4 });
+    const tl = gsap.timeline();
+    if (overlay) {
+      tl.to(overlay, { opacity: 1, duration: 0.3 });
+    }
+
+    tl.to(window, {
+      scrollTo: { y: target, offsetY: 110 },
+      duration: 1.1,
+      ease: "power3.inOut"
+    });
+
+    if (overlay) {
+      tl.to(overlay, { opacity: 0, duration: 0.4 });
+    }
   });
 });
 
 /* ================= SECTIONS ================= */
-gsap.utils.toArray("[data-section]").forEach((section, i) => {
-  gsap.from(section.querySelector(".container"), {
-    scrollTrigger: { trigger: section, start: "top 80%" },
+gsap.utils.toArray("[data-section]").forEach(section => {
+  const container = section.querySelector(".container");
+  if (!container) return;
+
+  gsap.from(container, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%"
+    },
+    y: 40,
     opacity: 0,
-    x: i % 2 === 0 ? -80 : 80,
-    duration: 1
+    duration: 0.9,
+    ease: "power2.out"
   });
 });
 
 /* ================= CARDS ================= */
 gsap.utils.toArray(".cards").forEach(cards => {
-  gsap.from(cards.querySelectorAll("[data-card]"), {
-    scrollTrigger: { trigger: cards, start: "top 85%" },
-    y: 40,
+  const items = cards.querySelectorAll("[data-card]");
+  if (!items.length) return;
+
+  gsap.from(items, {
+    scrollTrigger: {
+      trigger: cards,
+      start: "top 85%"
+    },
+    y: 30,
     opacity: 0,
-    stagger: 0.12
+    stagger: 0.12,
+    ease: "power2.out"
   });
 });
