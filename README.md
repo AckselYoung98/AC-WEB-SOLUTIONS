@@ -46,26 +46,14 @@ O layout utiliza **dark mode elegante**, animações suaves e seções bem defin
 
 ---
 
-##  Integração com WhatsApp
-
-Os botões de contato utilizam links personalizados para identificar a origem do lead, por exemplo:
-
-- **Site**
-- **Instagram**
-- **LinkedIn**
-
-Isso permite entender de onde o cliente veio e melhorar a estratégia de marketing.
-
----
-
 
 ##  Como Rodar o Projeto Localmente
 
 ```bash
 # Clone o repositório
-git clone https://github.com/AckselYoung98/AC-WEB-SOLUTIONS/
+git clone https://github.com/AckselYoung98/AC-WEB-SOLUTIONS.git
 
-# Acesse a pasta
-cd 
+# Acesse a pasta do projeto
+cd AC-WEB-SOLUTIONS
 
 # Abra o index.html no navegador
