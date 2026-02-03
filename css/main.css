@@ -1,9 +1,9 @@
 :root {
   /* DARK */
-  --bg-dark: #0b1220;
-  --panel-dark: #0f172a;
-  --text-light: #e5e7eb;
-  --muted-light: #9ca3af;
+  --bg-dark: #000000;
+  --panel-dark: #000000;
+  --text-light: #ffffff;
+  --muted-light: #fcfcfc;
 
   /* LIGHT */
   --bg-light: #f8fafc;
@@ -57,14 +57,23 @@ body {
 
 /* ================= HEADER ================= */
 .topbar {
+
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(11,18,32,.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-dark);
-  z-index: 40;
+  height: 72px;
+
+  background: linear-gradient(
+    180deg,
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
+  );
+
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
 }
+
 
 .header-inner {
   display: flex;
@@ -82,16 +91,23 @@ body {
 /* ================= MENU DESKTOP ================= */
 .main-nav {
   display: flex;
+  align-items: center;
   gap: 22px;
 }
 
+
 .main-nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
   color: var(--text-light);
   text-decoration: none;
   font-size: .95rem;
   opacity: .85;
   position: relative;
 }
+
 
 .main-nav a:hover { opacity: 1; }
 
